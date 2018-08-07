@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Módulo necessário
+# Modulos
 
 import socket
 import sys
@@ -21,35 +21,20 @@ def format_message(message):
 
 # funcoes de leitura
 
-def cnct1(ip):
-    client_socket1.send(format_message("\x0201001GM"))
-    data = client_socket1.recv(1024)
-    return data
-
-def cnct2(ip):
-    client_socket1.send(format_message("\x0201001GK"))
-    data = client_socket1.recv(1024)
-    return data
-
-def cnct3(ip):
-    client_socket1.send(format_message("\x0201001GN"))
-    data = client_socket1.recv(1024)
-    return data
-
-def cnct4(ip):
-    client_socket1.send(format_message("\x0201001GL"))
+def cnct(msgm):
+    client_socket1.send(format_message(msgm))
     data = client_socket1.recv(1024)
     return data
 
 type = ''
 sense = ''
-dados1 = cnct1(ip)
+dados1 = cnct("\x0201001GM")
 time.sleep(1)
-dados2 = cnct2(ip)
+dados2 = cnct("\x0201001GK")
 time.sleep(1)
-dados3 = cnct3(ip)
+dados3 = cnct("\x0201001GN")
 time.sleep(1)
-dados4 = cnct4(ip)
+dados4 = cnct("\x0201001GL")
 
 # mensagem crua
 print("\n" + dados1 + "\n" + dados2 + "\n" + dados3 + "\n" + dados4 + "\n" + "============================" + "\n")

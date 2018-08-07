@@ -28,6 +28,7 @@ def cnct(msgm):
 
 type = ''
 sense = ''
+time.sleep(1)
 dados1 = cnct("\x0201001GM")
 time.sleep(1)
 dados2 = cnct("\x0201001GK")
@@ -37,6 +38,7 @@ time.sleep(1)
 dados4 = cnct("\x0201001GL")
 
 # mensagem crua
+print("\n========================================\n")
 print("\n" + dados1 + "\n" + dados2 + "\n" + dados3 + "\n" + dados4 + "\n" + "============================" + "\n")
 
 if dados2[8] == "0":
